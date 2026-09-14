@@ -1,0 +1,21 @@
+Compile and execute the following code several times and explain the output
+
+Så vores parent starter med at sætte x til 10 og derefter laves der et child
+Både vores child og parent kører resten af for loopet igennem, hvor i er = 0
+De udfører forskellige ting, da der pid er forskellige, hvor child = 0
+Derefter køres for loopet igen, hvor både vores parent og child laver et nyt child
+Derefter køres resten af for loopet og resultaterne printes ud. 
+Da hver proces er copy vil de lokale variable blive gemt og derved ændres de, som vi kan se 
+i terminalen.
+
+How many processes in total are running concurrently?
+Efter nr. 2 forloop er der 4 processes, som kører samtidigt
+
+If the output changes for every execution, explain why this happens
+Fordi at de lokale variable gemmes i hver sin kopi ved hver proces.
+
+Den egentlige årsag til at output varierer mellem kørsler er, at operativsystemets scheduler 
+bestemmer i hvilken rækkefølge parent- og child-processerne rent faktisk får CPU-tid og udskriver 
+deres linjer. Der er ingen synkronisering mellem processerne, så rækkefølgen er ikke-deterministisk
+ — det er et såkaldt "race condition" på output. Derfor kan du se linjerne komme i forskellig rækkefølge hver gang 
+du kører programmet, selvom de printede værdier for en given proces altid er de samme.

@@ -1,0 +1,5 @@
+/home/au786842/sw3sys/week2_2/Excercise01/CMakeFiles/edit_cache.dir
+/home/au786842/sw3sys/week2_2/Excercise01/CMakeFiles/rebuild_cache.dir
+/home/au786842/sw3sys/week2_2/Excercise01/src/CMakeFiles/main.out.dir
+/home/au786842/sw3sys/week2_2/Excercise01/src/CMakeFiles/edit_cache.dir
+/home/au786842/sw3sys/week2_2/Excercise01/src/CMakeFiles/rebuild_cache.dir

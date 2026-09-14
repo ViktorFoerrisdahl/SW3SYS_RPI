@@ -1,0 +1,1 @@
+g++ -Wall -Wl,--dependency-file=CMakeFiles/main.out.dir/link.d CMakeFiles/main.out.dir/main.cpp.o CMakeFiles/main.out.dir/first_text.cpp.o CMakeFiles/main.out.dir/second_text.cpp.o CMakeFiles/main.out.dir/nerd.cpp.o -o ../build/bin/main.out
