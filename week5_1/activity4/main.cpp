@@ -120,7 +120,7 @@ int main ()
 
     auto time_end1 = std::chrono::high_resolution_clock::now();
     auto time_diff1 = std::chrono::duration_cast<std::chrono::microseconds>(time_end1 - time_start1).count();
-    std::cout << "duration ved 1 thread: " << time_diff1 << " mikrosekunder " << std::endl;
+    std::cout << "duration ved 1 threads: " << time_diff1 << " mikrosekunder " << std::endl;
 
     for (auto i = 0; i < ANTAL_THREADS; i++)
     {
