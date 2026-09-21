@@ -52,6 +52,10 @@ int main(int argc, char *argv[])
     // Set a name to be shown when gpioinfo is called
     strcpy(req.consumer_label, "GPIO read example");
 
+    memset(&fds, 0, sizeof(fds));
+    fds.fd = req.fd;
+    fds.events = POLLIN;
+
     // Use ioctl() to get GPIO line handle from kernel
     int ret_val = ioctl(fd, GPIO_GET_LINEHANDLE_IOCTL, &req);
     if (ret_val < 0)
@@ -65,7 +69,7 @@ int main(int argc, char *argv[])
     while (true)
     {
         // Use poll to monitor all file description
-        int ret_val = poll(fds, sizeof(fds), POLL_TIMEOUT_MS);
+        int ret_val = poll(&fds, 1, POLL_TIMEOUT_MS);
         if (ret_val < 0) // error handling
         {
             perror("poll() error");
@@ -74,15 +78,19 @@ int main(int argc, char *argv[])
             return EXIT_FAILURE;
         }
 
-        if (fds->revents & POLLIN)
+        if (fds.revents & POLLIN)
         {
-            ssize_t bytes = read(fds[i].fd, &data, sizeof(data));
+            ssize_t bytes = read(fds.fd, &data, sizeof(data));
             if (bytes != sizeof(data))
             {
                 perror("read failed");
             }
-            else if ()
+            for (auto i = 0; i < AMOUNT_OF_BOTTONS; i++)
             {
+                if (data.values[i] == 0)
+                {
+                    std::cout << "Button " << i << " pressed\n";
+                }
             }
         }
     }
