@@ -109,7 +109,18 @@ int main ()
 
     auto time_end = std::chrono::high_resolution_clock::now();
     auto time_diff = std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start).count();
-    std::cout << "duration: " << time_diff << " mikrosekunder " << std::endl;
+    std::cout << "duration ved 4 threads: " << time_diff << " mikrosekunder " << std::endl;
+
+
+    /////////////////////////
+
+    auto time_start1 = std::chrono::high_resolution_clock::now();
+
+    Node* found_element = sequential_search(linked_list_head,nullptr,-1);
+
+    auto time_end1 = std::chrono::high_resolution_clock::now();
+    auto time_diff1 = std::chrono::duration_cast<std::chrono::microseconds>(time_end1 - time_start1).count();
+    std::cout << "duration ved 1 thread: " << time_diff1 << " mikrosekunder " << std::endl;
 
     for (auto i = 0; i < ANTAL_THREADS; i++)
     {
