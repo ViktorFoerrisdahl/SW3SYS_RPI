@@ -1,0 +1,144 @@
+#include <iostream>
+#include <vector>
+#include <thread>
+#include <atomic>
+#include <random>
+#include <semaphore>
+
+
+// ==============================
+// Linked List Node
+// ==============================
+struct Node {
+    int value;
+    Node* next;
+    Node(int v) : value(v), next(nullptr) {}
+};
+
+// ==============================
+// Build Linked List
+// ==============================
+Node* build_linked_list(size_t n_nodes) {
+    if (n_nodes == 0) return nullptr;
+
+    // Random number generator
+    std::mt19937 rng(std::random_device{}());
+    std::uniform_int_distribution<int> dist(0, 100000);
+
+    Node* head = new Node(dist(rng));
+    Node* current = head;
+
+    for (size_t i = 1; i < n_nodes; i++) {
+        current->next = new Node(dist(rng));
+        current = current->next;
+    }
+    return head;
+}
+
+Node* sequential_search(Node* begin, Node* end, int key, std::counting_semaphore<> &sem)
+{
+    while(begin->next != end)
+    {
+        sem.acquire();
+        if (begin->value == key)
+        {
+            sem.acquire();
+            sem.acquire();
+            sem.acquire();
+            return begin;
+        }
+        sem.release();
+        begin = begin->next;
+    }
+    return nullptr;
+}
+
+/* ==============================
+   build_segments
+   head: Head pointer of linked list
+   n_nodes: Number of nodes in the linked list
+   n_threads: Number threads we want to run in parallel
+   returns: Vector with pointers to the beginning of each segment
+   ============================== */
+std::vector<Node*> build_segments(Node* head, size_t n_nodes, size_t n_threads) {
+    std::vector<Node*> segments;
+    if (!head || n_threads == 0) return segments;
+
+    size_t chunk_size = n_nodes / n_threads;
+    Node* current = head;
+    size_t count = 0;
+
+    while (current) {
+        if (count % chunk_size == 0 && segments.size() < n_threads) {
+            segments.push_back(current);
+        }
+        current = current->next;
+        count++;
+    }
+    return segments;
+}
+
+void segment_search_thread(Node* begin, Node* end, const int key, Node** result, std::counting_semaphore<> &sem)
+{
+    *result = sequential_search(begin, end, key,sem); 
+}
+
+
+int main ()
+{
+
+    int SIZE_LINKED_LIST = 1000;
+    int ANTAL_THREADS = 4;
+    int NUMBER_TO_SEARCH_FOR = -1;
+
+    std::counting_semaphore sem{4};
+
+    Node* linked_list_head = build_linked_list(SIZE_LINKED_LIST);
+
+    //vælger at bruge 4 threads:
+    //opdeler vores linked liste i 4:
+    std::vector<Node*> opdelinger = build_segments(linked_list_head, SIZE_LINKED_LIST, ANTAL_THREADS);
+
+    std::vector<Node*> results(ANTAL_THREADS);
+
+    auto time_start = std::chrono::high_resolution_clock::now();
+
+    std::thread t1(segment_search_thread,opdelinger[0],opdelinger[1],NUMBER_TO_SEARCH_FOR,&results[0], std::ref(sem));
+    std::thread t2(segment_search_thread,opdelinger[1],opdelinger[2],NUMBER_TO_SEARCH_FOR,&results[1],std::ref(sem));
+    std::thread t3(segment_search_thread,opdelinger[2],opdelinger[3],NUMBER_TO_SEARCH_FOR,&results[2],std::ref(sem));
+    std::thread t4(segment_search_thread,opdelinger[3],nullptr,NUMBER_TO_SEARCH_FOR,&results[3],std::ref(sem));
+    
+    t1.join();
+    t2.join();
+    t3.join();
+    t4.join();
+
+    auto time_end = std::chrono::high_resolution_clock::now();
+    auto time_diff = std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start).count();
+    std::cout << "duration ved 4 threads: " << time_diff << " mikrosekunder " << std::endl;
+
+
+    /////////////////////////
+
+    auto time_start1 = std::chrono::high_resolution_clock::now();
+
+    Node* found_element = sequential_search(linked_list_head,nullptr,-1,std::ref(sem));
+
+    auto time_end1 = std::chrono::high_resolution_clock::now();
+    auto time_diff1 = std::chrono::duration_cast<std::chrono::microseconds>(time_end1 - time_start1).count();
+    std::cout << "duration ved 1 threads: " << time_diff1 << " mikrosekunder " << std::endl;
+
+    for (auto i = 0; i < ANTAL_THREADS; i++)
+    {
+        if (results[i] == nullptr)
+        {
+            std::cout << "result på plads " << i << " = " << "nullptr" << std::endl;
+        }
+        else 
+        {
+            std::cout << "result på plads " << i << " = " << results[i] << std::endl;
+        }
+    }
+
+    return 0;
+}
