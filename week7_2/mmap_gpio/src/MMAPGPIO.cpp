@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <cstdint>
 #include <iostream>
+#include "MMAPGPIO.hpp"
 
 MMAPGPIO::MMAPGPIO(const char* memdev) {
   memDevice = memdev;
