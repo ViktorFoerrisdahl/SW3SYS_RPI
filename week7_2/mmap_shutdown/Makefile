@@ -6,7 +6,8 @@ TGT = main
 SRCDIR = src
 
 SRC = $(SRCDIR)/main.cpp \
-      $(SRCDIR)/MMAPGPIO_shutdown.cpp
+      $(SRCDIR)/MMAPGPIO_shutdown.cpp \
+	  $(SRCDIR)/SSD1306.cpp
 OBJ = $(SRC:.cpp=.o)
 HDR = inc
 
