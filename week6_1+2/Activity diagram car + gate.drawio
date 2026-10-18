@@ -1,0 +1,178 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+  <diagram name="Side-1" id="3o8pojzIHAR3AgN7F33r">
+    <mxGraphModel dx="2037" dy="1319" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-1" value="Car thread" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="120" width="200" height="790" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-1" source="xhSO1BB2s32J3rHMY_M0-4" target="xhSO1BB2s32J3rHMY_M0-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-4" value="" style="ellipse;fillColor=strokeColor;html=1;" parent="xhSO1BB2s32J3rHMY_M0-1" vertex="1">
+          <mxGeometry x="85" y="40" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-1" source="xhSO1BB2s32J3rHMY_M0-5" target="xhSO1BB2s32J3rHMY_M0-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-5" value="Take entry gate lock" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-1" vertex="1">
+          <mxGeometry x="40" y="100" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-1" source="xhSO1BB2s32J3rHMY_M0-12" target="xhSO1BB2s32J3rHMY_M0-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-12" value="Signal gate that car is ready" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-1" vertex="1">
+          <mxGeometry x="40" y="170" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-1" source="xhSO1BB2s32J3rHMY_M0-20" target="xhSO1BB2s32J3rHMY_M0-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-20" value="Car enters" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-1" vertex="1">
+          <mxGeometry x="40" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-1" source="xhSO1BB2s32J3rHMY_M0-25" target="xhSO1BB2s32J3rHMY_M0-61" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-25" value="Car signals to close gate" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-1" vertex="1">
+          <mxGeometry x="40" y="310" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-1" source="xhSO1BB2s32J3rHMY_M0-61" target="xhSO1BB2s32J3rHMY_M0-63" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-61" value="Car parks" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-1" vertex="1">
+          <mxGeometry x="40" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-1" source="xhSO1BB2s32J3rHMY_M0-63" target="xhSO1BB2s32J3rHMY_M0-65" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-63" value="Take exit gate lock" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-1" vertex="1">
+          <mxGeometry x="40" y="450" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-1" source="xhSO1BB2s32J3rHMY_M0-65" target="xhSO1BB2s32J3rHMY_M0-66" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-65" value="Signal gate that car is ready" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-1" vertex="1">
+          <mxGeometry x="40" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-1" source="xhSO1BB2s32J3rHMY_M0-66" target="xhSO1BB2s32J3rHMY_M0-67" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-66" value="Car leaves" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-1" vertex="1">
+          <mxGeometry x="40" y="590" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-67" value="Car signals to close gate" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-1" vertex="1">
+          <mxGeometry x="40" y="660" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-2" value="Entry Gate Thread" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="520" y="120" width="200" height="790" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-2" source="xhSO1BB2s32J3rHMY_M0-7" target="xhSO1BB2s32J3rHMY_M0-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-7" value="" style="ellipse;fillColor=strokeColor;html=1;" parent="xhSO1BB2s32J3rHMY_M0-2" vertex="1">
+          <mxGeometry x="85" y="40" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-2" source="xhSO1BB2s32J3rHMY_M0-8" target="xhSO1BB2s32J3rHMY_M0-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-8" value="Take entry gate lock" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-2" vertex="1">
+          <mxGeometry x="40" y="100" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-2" source="xhSO1BB2s32J3rHMY_M0-9" target="xhSO1BB2s32J3rHMY_M0-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-9" value="Wait for car" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-2" vertex="1">
+          <mxGeometry x="40" y="170" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-2" source="xhSO1BB2s32J3rHMY_M0-14" target="xhSO1BB2s32J3rHMY_M0-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-14" value="Open gate" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-2" vertex="1">
+          <mxGeometry x="40" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-2" source="xhSO1BB2s32J3rHMY_M0-17" target="xhSO1BB2s32J3rHMY_M0-30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-17" value="Wait for car to enter" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-2" vertex="1">
+          <mxGeometry x="40" y="310" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-29" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-40" y="329.6" as="sourcePoint" />
+            <mxPoint x="40" y="329.6" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-30" value="Close gate" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-2" vertex="1">
+          <mxGeometry x="40" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-18" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="xhSO1BB2s32J3rHMY_M0-12" target="xhSO1BB2s32J3rHMY_M0-9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="330" as="sourcePoint" />
+            <mxPoint x="560" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-21" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="xhSO1BB2s32J3rHMY_M0-14" target="xhSO1BB2s32J3rHMY_M0-20" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="410" as="sourcePoint" />
+            <mxPoint x="560" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-45" value="Exit Gate Thread" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="120" width="200" height="790" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-45" source="xhSO1BB2s32J3rHMY_M0-47" target="xhSO1BB2s32J3rHMY_M0-49" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-47" value="" style="ellipse;fillColor=strokeColor;html=1;" parent="xhSO1BB2s32J3rHMY_M0-45" vertex="1">
+          <mxGeometry x="85" y="40" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-45" source="xhSO1BB2s32J3rHMY_M0-49" target="xhSO1BB2s32J3rHMY_M0-51" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-49" value="Take exit gate lock" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-45" vertex="1">
+          <mxGeometry x="40" y="450" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-45" source="xhSO1BB2s32J3rHMY_M0-51" target="xhSO1BB2s32J3rHMY_M0-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-51" value="Wait for car" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-45" vertex="1">
+          <mxGeometry x="40" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-45" source="xhSO1BB2s32J3rHMY_M0-53" target="xhSO1BB2s32J3rHMY_M0-55" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-53" value="Open gate" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-45" vertex="1">
+          <mxGeometry x="40" y="590" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-45" source="xhSO1BB2s32J3rHMY_M0-55" target="xhSO1BB2s32J3rHMY_M0-57" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-55" value="Wait for car to exit" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-45" vertex="1">
+          <mxGeometry x="40" y="660" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-57" value="Close gate" style="fontStyle=0;html=1;whiteSpace=wrap;" parent="xhSO1BB2s32J3rHMY_M0-45" vertex="1">
+          <mxGeometry x="40" y="730" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-71" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-45" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="609.29" as="sourcePoint" />
+            <mxPoint x="240" y="609.29" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-76" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-45" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="539.57" as="sourcePoint" />
+            <mxPoint x="160" y="539.57" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xhSO1BB2s32J3rHMY_M0-77" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="xhSO1BB2s32J3rHMY_M0-45" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="679.57" as="sourcePoint" />
+            <mxPoint x="160" y="679.57" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

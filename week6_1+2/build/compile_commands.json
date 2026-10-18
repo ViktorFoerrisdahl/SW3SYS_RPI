@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/build/src",
+  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000/inc -Wall -g -std=gnu++11 -o CMakeFiles/Park_A_Lot_2000.dir/Park_A_Lot_2000.cpp.o -c /home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000/src/Park_A_Lot_2000.cpp",
+  "file": "/home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000/src/Park_A_Lot_2000.cpp",
+  "output": "src/CMakeFiles/Park_A_Lot_2000.dir/Park_A_Lot_2000.cpp.o"
+},
+{
+  "directory": "/home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/build/src",
+  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000/inc -Wall -g -std=gnu++11 -o CMakeFiles/Park_A_Lot_2000.dir/car.cpp.o -c /home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000/src/car.cpp",
+  "file": "/home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000/src/car.cpp",
+  "output": "src/CMakeFiles/Park_A_Lot_2000.dir/car.cpp.o"
+},
+{
+  "directory": "/home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/build/src",
+  "command": "/usr/bin/aarch64-linux-gnu-g++  -I/home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000/inc -Wall -g -std=gnu++11 -o CMakeFiles/Park_A_Lot_2000.dir/gate.cpp.o -c /home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000/src/gate.cpp",
+  "file": "/home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000/src/gate.cpp",
+  "output": "src/CMakeFiles/Park_A_Lot_2000.dir/gate.cpp.o"
+}
+]

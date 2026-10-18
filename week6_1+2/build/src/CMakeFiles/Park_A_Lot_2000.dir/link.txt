@@ -1,0 +1,1 @@
+/usr/bin/aarch64-linux-gnu-g++ -Wall -g -Wl,--dependency-file=CMakeFiles/Park_A_Lot_2000.dir/link.d CMakeFiles/Park_A_Lot_2000.dir/Park_A_Lot_2000.cpp.o CMakeFiles/Park_A_Lot_2000.dir/car.cpp.o CMakeFiles/Park_A_Lot_2000.dir/gate.cpp.o -o /home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000/build/bin/Park_A_Lot_2000

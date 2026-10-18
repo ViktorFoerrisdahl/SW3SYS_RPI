@@ -1,0 +1,5 @@
+C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build-windows/CMakeFiles/edit_cache.dir
+C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build-windows/CMakeFiles/rebuild_cache.dir
+C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build-windows/src/CMakeFiles/Park_A_Lot_2000.dir
+C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build-windows/src/CMakeFiles/edit_cache.dir
+C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build-windows/src/CMakeFiles/rebuild_cache.dir

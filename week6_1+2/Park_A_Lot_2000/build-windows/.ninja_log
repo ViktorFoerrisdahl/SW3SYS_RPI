@@ -1,0 +1,27 @@
+# ninja log v6
+570	787	8125579476305310	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f
+51	882	8125572011606481	src/CMakeFiles/Park_A_Lot_2000.dir/Park_A_Lot_2000.cpp.obj	a85b7d0fa06b1e88
+11	569	8125579470713450	src/CMakeFiles/Park_A_Lot_2000.dir/gate.cpp.obj	eaa421ff1717c609
+66	590	8125572011758171	src/CMakeFiles/Park_A_Lot_2000.dir/car.cpp.obj	6dc8ff6068cc296e
+50	571	8125580430276296	src/CMakeFiles/Park_A_Lot_2000.dir/gate.cpp.obj	eaa421ff1717c609
+572	771	8125580435498339	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f
+47	591	8125590531404134	src/CMakeFiles/Park_A_Lot_2000.dir/gate.cpp.obj	eaa421ff1717c609
+592	834	8125590536854499	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f
+48	632	8125591568680442	src/CMakeFiles/Park_A_Lot_2000.dir/gate.cpp.obj	eaa421ff1717c609
+633	831	8125591574516218	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f
+38	579	8125591966772654	src/CMakeFiles/Park_A_Lot_2000.dir/gate.cpp.obj	eaa421ff1717c609
+580	793	8125591972171863	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f
+36	822	8125592377834875	src/CMakeFiles/Park_A_Lot_2000.dir/Park_A_Lot_2000.cpp.obj	a85b7d0fa06b1e88
+823	1026	8125592385705645	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f
+41	569	8125593920735209	src/CMakeFiles/Park_A_Lot_2000.dir/car.cpp.obj	6dc8ff6068cc296e
+570	765	8125593926020941	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f
+50	565	8125602961378435	src/CMakeFiles/Park_A_Lot_2000.dir/car.cpp.obj	6dc8ff6068cc296e
+62	601	8125602961490396	src/CMakeFiles/Park_A_Lot_2000.dir/gate.cpp.obj	eaa421ff1717c609
+38	834	8125602961250666	src/CMakeFiles/Park_A_Lot_2000.dir/Park_A_Lot_2000.cpp.obj	a85b7d0fa06b1e88
+835	1080	8125602969211827	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f
+49	801	8125603651814375	src/CMakeFiles/Park_A_Lot_2000.dir/Park_A_Lot_2000.cpp.obj	a85b7d0fa06b1e88
+802	1004	8125603659349973	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f
+62	531	8125638222515286	src/CMakeFiles/Park_A_Lot_2000.dir/gate.cpp.obj	eaa421ff1717c609
+532	731	8125638227203117	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f
+50	723	8125639205604514	src/CMakeFiles/Park_A_Lot_2000.dir/Park_A_Lot_2000.cpp.obj	a85b7d0fa06b1e88
+723	921	8125639212327061	C:/Users/vikto/uni/3. semester/SW3SYS/Handin01/Park_A_Lot_2000/build/bin/Park_A_Lot_2000.exe	d2f94d1c57d5698f

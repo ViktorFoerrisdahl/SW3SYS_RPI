@@ -1,0 +1,5 @@
+{
+    "cmake.sourceDirectory": "/home/au786842/SW3/sw3sys/SW3SYS_RPI/week6_1+2/Park_A_Lot_2000",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Microsoft, ColumnLimit: 250 }"
+}
