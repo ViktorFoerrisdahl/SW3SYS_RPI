@@ -29,9 +29,9 @@ struct GameState {
     std::condition_variable cv;
     std::condition_variable shootButton_cv;
     std::condition_variable moveButton_cv;
-    bool shootButtonLeft_flag;
-    bool shootButtonRight_flag;
-    bool moveButton_flag;
+    bool shootButtonLeft_flag = false;
+    bool shootButtonRight_flag = false;
+    bool moveButton_flag = false;
     bool enemyHasMoved_flag = false;
     bool bulletsHasMoved_flag = false;
 };
