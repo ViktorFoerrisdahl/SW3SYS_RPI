@@ -12,17 +12,7 @@ void Bullet::bulletInputThread()
 
     while (game->running)
     {
-        /* TODO: Shoot bullet thread
-         * If shoot button has been tapped (changed state),
-         * add ONE new bullet
-         *
-         * 1) Delay / lock / wait?
-         * 2) If tapped, add ONE new bullet to game->bullets at ships x,y *    position
-         * 3) Is sync required?
-         *
-         * If button is held down, only one shot must be fired!
-         */
-        std::unique_lock<std::mutex> lock(bulletThreadLock_);
+        std::unique_lock<std::mutex> lock(game->gameMutex);
 
         game->shootButton_cv.wait(lock, [&]
                                   { return game->shootButtonLeft_flag || game->shootButtonRight_flag; });
@@ -40,12 +30,15 @@ void Bullet::bulletUpdateThread()
         // Running at fixed speed (bullet movement)
         std::this_thread::sleep_for(std::chrono::milliseconds(25));
         {
-            std::unique_lock<std::mutex> lock(bulletThreadLock_);
+            std::unique_lock<std::mutex> lock(game->gameMutex);
 
-            for (auto b = game->bullets.begin(); b != game->bullets.end();)
+            if (game->bulletsHasMoved_flag == false)
             {
-                b->x++;
-                ++b; // normal increment
+                for (auto b = game->bullets.begin(); b != game->bullets.end();)
+                {
+                    b->x++;
+                    ++b; // normal increment
+                }
             }
 
             /* TODO: Update bullets (move right)
@@ -66,7 +59,9 @@ void Bullet::bulletUpdateThread()
                     ++b; // normal increment if no erase
                 }
             }
+            game->bulletsHasMoved_flag = true;
             lock.unlock();
+            game->cv.notify_all(); // sender notify til game_controller, at vores bullet har bevæget sig
         }
     }
 }

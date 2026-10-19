@@ -32,4 +32,6 @@ struct GameState {
     bool shootButtonLeft_flag;
     bool shootButtonRight_flag;
     bool moveButton_flag;
+    bool enemyHasMoved_flag = false;
+    bool bulletsHasMoved_flag = false;
 };
