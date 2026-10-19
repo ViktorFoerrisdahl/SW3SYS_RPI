@@ -48,7 +48,8 @@ Buttons::Buttons(GameState *game) : game(game)
     // Vi havde et problem, da vi startede med at sætte values til 0. Så skød vores rumskib i starten af spillet af sig selv
     // Derfor sættes den til 1 for at simuleren, at alle "ikke" er trykket
     memset(&req_in, 1, sizeof(req_in));
-
+    memset(&data_in, 1, sizeof(data_in));
+    
     // Specify GPIO lines we want to access
     req_in.lineoffsets[0] = BTN_A;
     req_in.lineoffsets[1] = BTN_B;
