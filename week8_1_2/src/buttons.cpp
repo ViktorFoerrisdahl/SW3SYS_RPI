@@ -44,8 +44,10 @@ Buttons::Buttons(GameState *game) : game(game)
         perror("open() failed in buttons contructor");
     }
 
-    // Fill struct elements with 0's to clear old values
-    memset(&req_in, 0, sizeof(req_in));
+    // Fill struct elements with 1's to clear old values
+    // Vi havde et problem, da vi startede med at sætte values til 0. Så skød vores rumskib i starten af spillet af sig selv
+    // Derfor sættes den til 1 for at simuleren, at alle "ikke" er trykket
+    memset(&req_in, 1, sizeof(req_in));
 
     // Specify GPIO lines we want to access
     req_in.lineoffsets[0] = BTN_A;
@@ -154,6 +156,12 @@ void Buttons::readGPIOs()
      * 1) Update input data buffer with current GPIO state
      */
     // Use ioctl() to get GPIO line value from kernel
+
+    // Her gemmer vi de værdier, som knapperne havde i sidste while loop
+    buttonLeft_last = data_in.values[0];
+    buttonRight_last = data_in.values[1];
+
+    // her opdateres data_in med de nye værdier.
     int ret_val = ioctl(req_in.fd, GPIOHANDLE_GET_LINE_VALUES_IOCTL, &data_in);
     if (ret_val < 0)
     {
@@ -161,14 +169,19 @@ void Buttons::readGPIOs()
         close(req_in.fd);
         close(fd_);
     }
-    if (data_in.values[0] == 0)
+
+    // hvis en knap er trykket vil dens value være 0 og hvis sidste værdi var 1 vil det betyde tryk
+    //  Derved sender vi et skud afsted og butten_last opdateres til 0. Derved skyder vi kun 1 gang
+    // selvom vi holder knappen nede.
+
+    if (data_in.values[0] == 0 && buttonLeft_last == 1)
     {
         game->shootButtonLeft_flag = true;
         game->shootButton_cv.notify_one(); // signalere til vores bullet_input_thread, at knappen er trykket
     }
-    else if (data_in.values[1] == 0)
+    else if (data_in.values[1] == 0 && buttonRight_last == 1)
     {
-        game->shootButtonLeft_flag = true;
+        game->shootButtonRight_flag = true;
         game->shootButton_cv.notify_one(); // signalere til vores bullet_input_thread, at knappen er trykket
     }
 }

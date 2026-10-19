@@ -18,7 +18,7 @@ private:
     int chip_fd = -1;
     struct gpiohandle_request req_in;
     struct gpiohandle_data data_in;
-    bool buttonLeft = 1;
-    bool buttonRight = 1;
+    bool buttonLeft_last = 1;
+    bool buttonRight_last = 1;
     int fd_{};
 };
