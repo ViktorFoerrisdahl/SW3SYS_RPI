@@ -39,6 +39,8 @@ void Bullet::bulletUpdateThread()
                     b->x++;
                     ++b; // normal increment
                 }
+                game->bulletsHasMoved_flag = true;
+                game->cv.notify_all(); // sender notify til game_controller, at vores bullet har bevæget sig
             }
 
             /* TODO: Update bullets (move right)
@@ -59,9 +61,7 @@ void Bullet::bulletUpdateThread()
                     ++b; // normal increment if no erase
                 }
             }
-            game->bulletsHasMoved_flag = true;
             lock.unlock();
-            game->cv.notify_all(); // sender notify til game_controller, at vores bullet har bevæget sig
         }
     }
 }
