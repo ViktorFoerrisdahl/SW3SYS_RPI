@@ -32,10 +32,10 @@ void Display::drawDisplay(const Vec2 &shipPos,
     oled.setCursor(0, 0);
     oled.print("S ");
     oled.print(score);
-    oled.print(" B ");
-    oled.print(bullets.size());
-    oled.print(" E ");
-    oled.print(enemies.size());
+    // oled.print(" B ");
+    // oled.print(bullets.size());
+    // oled.print(" E ");
+    // oled.print(enemies.size());
 
     // Send buffer to OLED
     oled.OLEDupdate();

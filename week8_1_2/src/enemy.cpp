@@ -30,6 +30,8 @@ void Enemy::enemyThread()
                 {
                     e.x -= 1;
                 }
+                game->enemyHasMoved_flag = true;
+                game->cv.notify_all(); // Sender notify til game controller, at vores enemies har bevæget sig
             }
             // Delete enemy when out of screen
             // vector::erase invalidates iterator
@@ -45,8 +47,6 @@ void Enemy::enemyThread()
                     ++e; // normal increment if no erase
                 }
             }
-            game->enemyHasMoved_flag = true;
         }
-        game->cv.notify_all(); // Sender notify til game controller, at vores enemies har bevæget sig
     }
 }
