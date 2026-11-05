@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <variant>
+#include <unistd.h>
 
 #include "message.h"
 
@@ -20,7 +21,7 @@ int main()
     std::cout << "SYS week9 \n";
 
     //opretter queue med size:
-    MessageQueue<Message> q1 (10);
+    MessageQueue<Message> q1 (2);
 
     //opretter vores data, som skal sendes:
     intData i1;
@@ -75,6 +76,7 @@ int main()
         {
             Message tempMsg;
             q1.pop(tempMsg); 
+            sleep(2);
             std::visit([](auto&& data) {handle(data); }, tempMsg.data);
         }
     });
@@ -82,15 +84,22 @@ int main()
     //opretter sender
     std::thread senderThreadInt([&] {
         q1.push(m1);
+        std::cout << "m1 was pushed \n";
         q1.push(m2);
+        std::cout << "m2 was pushed \n";
         q1.push(m4);
+        std::cout << "m4 was pushed \n";
         q1.push(m5);
+        std::cout << "m5 was pushed \n";
         q1.push(m6);
+        std::cout << "m6 was pushed \n";
         q1.push(m7);
+        std::cout << "m7 was pushed \n";
     });
 
       std::thread senderThreadDuuble([&] {
         q1.push(m3);
+        std::cout << "m3 was pushed \n";
     });
 
     senderThreadDuuble.join();
