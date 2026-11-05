@@ -3,7 +3,7 @@
 #include <chrono>
 #include <iostream>
 
-Enemy::Enemy(GameState *game) : game(game) {};
+Enemy::Enemy(GameState *game, MessageQueue<Message> &q) : game(game), q_(q) {};
 
 void Enemy::enemyThread()
 {
@@ -48,5 +48,20 @@ void Enemy::enemyThread()
             game->enemyHasMoved_flag = true;
         }
         game->cv.notify_all(); // Sender notify til game controller, at vores enemies har bevæget sig
+        if (!game->enemies.empty())
+        {
+            EnemiesData Enemies_data_temp;
+            Message tempMSG;
+            for (auto b = game->enemies.begin(); b != game->enemies.end();)
+            {
+                Vec2 tempEnemy;
+                tempEnemy.x = b->x;
+                tempEnemy.y = b->y;
+                Enemies_data_temp.enemies.push_back(tempEnemy);
+                ++b;
+            }
+            tempMSG.data = Enemies_data_temp;
+            q_.push(tempMSG);
+        }
     }
 }

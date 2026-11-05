@@ -3,7 +3,7 @@
 #include <condition_variable>
 #include <chrono>
 
-Bullet::Bullet(GameState *game, Buttons *buttons) : game(game), buttons(buttons) {};
+Bullet::Bullet(GameState *game, Buttons *buttons, MessageQueue<Message> &q) : game(game), buttons(buttons), q_(q) {};
 
 void Bullet::bulletInputThread()
 {
@@ -59,9 +59,27 @@ void Bullet::bulletUpdateThread()
                     ++b; // normal increment if no erase
                 }
             }
+            // make the bulletdata for each bullet.
+
             game->bulletsHasMoved_flag = true;
             lock.unlock();
             game->cv.notify_all(); // sender notify til game_controller, at vores bullet har bevæget sig
+
+            if (!game->bullets.empty())
+            {
+                BulletData Bullet_data_temp;
+                Message tempMSG;
+                for (auto b = game->bullets.begin(); b != game->bullets.end();)
+                {
+                    Vec2 tempBullet;
+                    tempBullet.x = b->x;
+                    tempBullet.y = b->y;
+                    Bullet_data_temp.bullets.push_back(tempBullet);
+                    ++b;
+                }
+                tempMSG.data = Bullet_data_temp;
+                q_.push(tempMSG);
+            }
         }
     }
 }

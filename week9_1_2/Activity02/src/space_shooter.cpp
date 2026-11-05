@@ -19,14 +19,17 @@ int main(int argc, char *argv[]) {
   return -1;
   oled.OLEDbegin(0x3c); // initialize the OLED
 
+  MessageQueue<Message> MQ(100);
+  
   GameState game;
   Buttons buttons(&game);
   Display display(oled, &game);
   Ship ship(&game, &buttons);
   Accelerometer accl(&game);
   GameController game_ctrl(&game);
-  Enemy enemy(&game);
-  Bullet bullet(&game, &buttons);
+  Enemy enemy(&game, MQ);
+  Bullet bullet(&game, &buttons, MQ);
+  MqGameController MQ_game_ctrl(&game,MQ);
 
   // Threads need function object from non-static member function
   std::thread t1([&buttons]() { buttons.buttonsThread(); });
@@ -36,6 +39,7 @@ int main(int argc, char *argv[]) {
   std::thread t5([&ship]() { ship.shipThread(); });
   std::thread t6([&bullet]() { bullet.bulletInputThread(); });
   std::thread t7([&bullet]() { bullet.bulletUpdateThread(); });
+  std::thread t8([&MQ_game_ctrl](){MQ_game_ctrl.gameControllerThread(); });
   
   t1.join();
   t2.join();
@@ -44,6 +48,7 @@ int main(int argc, char *argv[]) {
   t5.join();
   t6.join();
   t7.join();
+  t8.join();
  
   //oled.OLEDPowerDown();
 

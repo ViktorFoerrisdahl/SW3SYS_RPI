@@ -20,9 +20,9 @@
 // ============================
 struct GameState {
     Vec2 shipPos{0, displayHeight/2+3}; // Center left (ship is 8x7)
+    Vec2 gravity{0, 0};
     std::vector<Vec2> bullets;
     std::vector<Vec2> enemies;
-    Vec2 gravity{0, 0};
     int score = 0;
     bool running = true;
     std::mutex gameMutex;
