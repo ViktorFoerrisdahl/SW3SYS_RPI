@@ -1,0 +1,17 @@
+/* File: mygpio-dt.dts */
+/dts-v1/;
+/plugin/;
+/ {
+    compatible = "brcm,bcm2712";
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            my-gpio-device {
+                compatible = "au-ece, my-gpio";
+                my-gpios = <&rp1_gpio 12 0>, <&rp1_gpio 16 0>;
+            };
+        };
+    };
+};
+
+
